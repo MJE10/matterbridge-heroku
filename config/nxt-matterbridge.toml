@@ -1,0 +1,147 @@
+# ------------------------------------- NXT -------------------------------------
+
+[discord]
+[discord.NXT_Discord]
+
+# You can get your token by following the instructions on
+# https://github.com/42wim/matterbridge/wiki/Discord-bot-setup
+# in particular that the "Members Intent" checkbox is important.
+# If you want roles/groups mentions to be shown with names instead of ID,
+# you'll need to give your bot the "Manage Roles" permission.
+Token="${NXT_DISCORD}"
+
+Server="933896029777039432" # picked from guilds the bot is connected to
+AutoWebhooks=true
+
+RemoteNickFormat="Slack - #{CHANNEL} - @{NICK}"
+# Map threads from other bridges on discord replies
+PreserveThreading=true
+
+[slack]
+[slack.NXT_Slack]
+Token="${NXT_SLACK}"
+RemoteNickFormat="Discord - #{CHANNEL} - @{NICK}"
+# this will maps threads from other bridges on slack threads
+PreserveThreading=true
+
+
+
+# information
+[[gateway]]
+name="announcements"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="announcements"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="announcements"
+
+
+
+# text channels
+[[gateway]]
+name="eboard"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="eboard"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="eboard"
+
+[[gateway]]
+name="general"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="general"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="general"
+
+[[gateway]]
+name="brainstuff"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="brainstuff"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="brainstuff"
+
+[[gateway]]
+name="random"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="random"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="random"
+
+[[gateway]]
+name="paper-review"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="paper-review"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="paper_review"
+
+[[gateway]]
+name="u_of_r"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="u_of_r"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="u_of_r"
+
+
+
+# team projects
+[[gateway]]
+name="proj-prosthetics"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="proj-prosthetics"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="proj_prosthetic"
+
+[[gateway]]
+name="proj_game"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="proj_game"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="proj_game"
+
+[[gateway]]
+name="proj_keyboard"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="proj_keyboard"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="proj_keyboard"
+
+
+
+# admin only
+[[gateway]]
+name="bot-testing"
+enable=true
+[[gateway.inout]]
+account="discord.NXT_Discord"
+channel="bot-testing"
+[[gateway.inout]]
+account="slack.NXT_Slack"
+channel="bot-testing"
